@@ -1,0 +1,69 @@
+<!--  
+    Default settings file for Game of Domes - Pong
+    "World" contains information about all interactive objects
+    in the game world. Some objects are directly created from these
+    values (for example the Ball) while others are created later
+    with the information presented here, e.g., Fence.
+    
+    NOTE:
+    All angles accept symbolic names as well:
+    c_pi  = 3.1415926...
+    c_pi2 = pi / 2
+    c_pi4 = pi / 4
+    c_2pi = 2 * pi
+    c_3pi4 = 3 * pi / 4
+    
+    The radius of the light source is given in multiples
+    of the dome radius
+-->
+<?xml version="1.0" ?>
+<Settings>
+    <World>
+        <Object type="Ball">
+            <Position phi="c_pi2" theta="c_3pi4" />
+            <Movement phi="1.0" theta="0.0" />
+            <Radius value="0.5" />
+            <Mass value="1.0" />
+            <Shader value="PhongShader" />
+            <Material>
+                <K_ambient r="0.2" g="0.2" b="0.2" a="0.5" />
+                <K_diffuse r="0.4" g="0.5" b="0.9" a="1.0" />
+                <K_specular r="0.8" g="0.8" b="1.0" a="1.0" />
+                <Shininess value="20.0" />
+            </Material>
+        </Object>
+        <Object type="Fence">
+            <Size phi="2.5" theta="3.5" />
+            <Mass value="20.0" />
+            <Shader value="PhongShader" />
+            <Material>
+                <K_ambient r="0.3" g="1.0" b="1.0" a="1.0" />
+                <K_diffuse r="0.1" g="1.0" b="1.0" a="1.0" />
+                <K_specular r="0.8" g="0.8" b="1.0" a="1.0" />
+                <Shininess value="20.0" />
+            </Material>
+        </Object>
+        <Object type="Paddle">
+            <Size phi="5.5" theta="0.75" />
+            <Mass value="20.0" />
+            <Shader value="PhongShader" />
+            <Height value="0.1" />
+            <Speed value="8.0" />
+            <Material>
+                <K_ambient r="1.0" g="1.0" b="1.0" a="1.0" />
+                <K_diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+                <K_specular r="0.8" g="0.8" b="1.0" a="1.0" />
+                <Shininess value="20.0" />
+            </Material>
+        </Object>
+    </World>
+    <Misc>
+        <NumPlayers value="2"/>
+        <GridColor r="0.5" g="0.5" b="0.5" a="1.0"/>
+        <Lighting>
+            <K_ambient r="0.2" g="0.2" b="0.2" a="0.2" />
+            <Position phi="0.0" theta="0" radius="1.0" />
+        </Lighting>
+<!--    <Background image="" /> -->
+    </Misc>
+</Settings>
